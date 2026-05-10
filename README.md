@@ -96,9 +96,9 @@ The best balance between precision and recall was reached at a confidence thresh
 
 | Path | Purpose |
 | --- | --- |
-| `Computer Vision Documentation.pdf` | Main project documentation for the computer vision system. |
-| `build_combined_dataset.py` | Builds the combined YOLO dataset from the original ZIP files. |
-| `train_fire_smoke_yolo.py` | Validates the dataset, trains the YOLO model, copies the best model, and runs test evaluation. |
+| `Documentation of Steps/Computer Vision Documentation.pdf` | Main project documentation for the computer vision system. |
+| `Python Code/build_combined_dataset.py` | Builds the combined YOLO dataset from the original ZIP files. |
+| `Python Code/train_fire_smoke_yolo.py` | Validates the dataset, trains the YOLO model, copies the best model, and runs test evaluation. |
 | `Datasets/Original Zip Folders` | Stores the six original dataset ZIP files. |
 | `Datasets/Combined YOLO Fire Smoke Dataset` | Final combined YOLO dataset used for training, validation, and testing. |
 | `AI Model/fire_smoke_model.pt` | Final trained fire and smoke detection model. |
