@@ -92,11 +92,32 @@ The model correctly detected 11,372 `fire_smoke` objects, missed 4,926 objects, 
 
 The best balance between precision and recall was reached at a confidence threshold of `0.290`. This can be used as a starting point for robot camera testing or webcam testing.
 
+### External Test-Set Evaluation
+
+The trained model was also evaluated using an independent external dataset that was not used during training, validation, or internal testing. The **Annotated Fire-Smoke Image Dataset for Fire Detection Using YOLO** was obtained from CQUniversity through Figshare.
+
+Fire and smoke annotations were converted into the single `fire_smoke` class used by the model. During cleaning, two images were removed because their label files contained no valid bounding boxes, leaving a final external test set of 11,019 images.
+
+The external evaluation used an image size of `640`, a confidence threshold of `0.29`, and an IoU threshold of `0.5`.
+
+| Metric    | Result |
+| --------- | -----: |
+| Precision | 0.8015 |
+| Recall    | 0.6447 |
+| F1 score  | 0.7146 |
+| mAP50     | 0.7547 |
+| mAP75     | 0.5922 |
+| mAP50-95  | 0.5356 |
+
+The external results were similar to the internal test results. The external precision and mAP scores were slightly higher, while recall was slightly lower. This indicates that the model generalises reasonably well to images from a different source.
+
+
 ## Project Files
 
 | Path | Purpose |
 | --- | --- |
 | `Documentation of Steps/Computer Vision Documentation.pdf` | Main project documentation for the computer vision system. |
+| `Documentation of Steps/External Test Set.pdf` | Documents the preparation and evaluation of the independent external test dataset. |
 | `Python Code/build_combined_dataset.py` | Builds the combined YOLO dataset from the original ZIP files. |
 | `Python Code/train_fire_smoke_yolo.py` | Validates the dataset, trains the YOLO model, copies the best model, and runs test evaluation. |
 | `Datasets/Original Zip Folders` | Stores the six original dataset ZIP files. |
